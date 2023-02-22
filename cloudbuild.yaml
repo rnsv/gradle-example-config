@@ -18,7 +18,7 @@ steps:
     - '-c'
     - |
       gcloud run deploy ${_SERVICE_NAME}-$BUILD_ID \
-        --image $_REPO_HOST/$PROJECT_ID/$REPO_NAME/hello-spring:latest \
+        --image $_REPO_HOST/$PROJECT_ID/$_REPO_NAME/hello-spring:latest \
         --region ${_DEPLOY_REGION} \
         --no-allow-unauthenticated
   env:
@@ -26,7 +26,6 @@ steps:
     - '_SERVICE_NAME=${_SERVICE_NAME}'
     - '_DEPLOY_REGION=${_DEPLOY_REGION}'
     - 'BUILD_ID=${BUILD_ID}'
-    - 'PROJECT_ID=gradle-example'
 - id: 'Retrieve Service URL'
   name: 'gcr.io/cloud-builders/gcloud:latest'
   entrypoint: /bin/bash
@@ -41,7 +40,6 @@ steps:
     - '_SERVICE_NAME=${_SERVICE_NAME}'
     - '_DEPLOY_REGION=${_DEPLOY_REGION}'
     - 'BUILD_ID=${BUILD_ID}'
-    - 'PROJECT_ID=gradle-example'
   
 # - id: 'Run System Tests'
 #   name: golang
