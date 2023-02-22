@@ -20,7 +20,7 @@ steps:
     - '-c'
     - |
       gcloud run deploy ${_SERVICE_NAME}-$BUILD_ID \
-        --image $_REPO_HOST/$PROJECT_ID/$PROJECT_ID/$REPO_NAME/hello-spring:latest \
+        --image $_REPO_HOST/$PROJECT_ID/$REPO_NAME/hello-spring:latest \
         --region ${_DEPLOY_REGION} \
         --no-allow-unauthenticated
 
