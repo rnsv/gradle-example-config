@@ -38,7 +38,7 @@ steps:
     - '_SERVICE_NAME=${_SERVICE_NAME}'
     - '_DEPLOY_REGION=${_DEPLOY_REGION}'
     - 'BUILD_ID=${BUILD_ID}'
-    - 'PROJECT_ID=${PROJECT_ID}'
+    - 'PROJECT_ID=gradle-example'
   
 # - id: 'Run System Tests'
 #   name: golang
